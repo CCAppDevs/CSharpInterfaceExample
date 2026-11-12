@@ -1,4 +1,7 @@
-﻿namespace InterfaceExample
+﻿using InterfaceExample.actors;
+using InterfaceExample.architecture;
+
+namespace InterfaceExample
 {
     public class Program
     {
@@ -47,11 +50,10 @@
             // all enemies attempt to flee (if they can)
             foreach (AbstractEnemy enemy in enemies)
             {
-                // cast to a fleeable
-                // if the enemy is a fleeable
-                    // flee
-                // else 
-                    // do nothing
+                if (enemy is IFleeable typedEnemy)
+                {
+                    typedEnemy.Flee();
+                }
             }
         }
     }

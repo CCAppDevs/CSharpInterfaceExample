@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InterfaceExample
+namespace InterfaceExample.actors
 {
     public abstract class AbstractEnemy
     {

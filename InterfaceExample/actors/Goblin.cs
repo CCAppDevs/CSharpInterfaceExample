@@ -1,8 +1,9 @@
-﻿using System;
+﻿using InterfaceExample.architecture;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace InterfaceExample
+namespace InterfaceExample.actors
 {
     public class Goblin : AbstractEnemy, IFleeable
     {
