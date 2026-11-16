@@ -6,7 +6,7 @@ namespace InterfaceExample.actors
 {
     public class Wizard : AbstractEnemy
     {
-        public Wizard(string name, int maxHealth) : base(name, maxHealth)
+        public Wizard(string name, int x, int y, int maxHealth) : base(name, x, y, maxHealth)
         {
         }
 

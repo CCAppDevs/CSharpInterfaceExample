@@ -32,11 +32,11 @@ namespace InterfaceExample
             //      basic melee attack
             //      light armor
 
-            Wizard tim = new Wizard("Tim, The Enchanter", 15);
+            Wizard tim = new Wizard("Tim, The Enchanter", 3, 3, 15);
 
             List<AbstractEnemy> enemies = new List<AbstractEnemy>()
             {
-                new Goblin("Skrit, the goblin", 10),
+                new Goblin("Skrit, the goblin", 2, 2, 10),
                 tim
             };
 

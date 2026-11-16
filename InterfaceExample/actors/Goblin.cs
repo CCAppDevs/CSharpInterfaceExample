@@ -7,7 +7,7 @@ namespace InterfaceExample.actors
 {
     public class Goblin : AbstractEnemy, IFleeable
     {
-        public Goblin(string name, int maxHealth) : base(name, maxHealth)
+        public Goblin(string name, int x, int y, int maxHealth) : base(name, x, y, maxHealth)
         {
         }
 

@@ -1,20 +1,25 @@
-﻿using System;
+﻿using InterfaceExample.architecture;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace InterfaceExample.actors
 {
-    public abstract class AbstractEnemy
+    public abstract class AbstractEnemy : Actor, IHealth
     {
-        public string Name { get; set; }
+        protected AbstractEnemy(string name, int positionX, int positionY, int maxHealth) : 
+            base(name, positionX, positionY)
+        {
+            MaxHealth = maxHealth;
+            Health = MaxHealth;
+        }
+
         public int MaxHealth { get; set; }
         public int Health { get; set; }
 
-        protected AbstractEnemy(string name, int maxHealth)
+        public bool IsAlive()
         {
-            this.Name = name;
-            this.MaxHealth = maxHealth;
-            this.Health = this.MaxHealth;
+            return Health > 0;
         }
 
         // attack action
