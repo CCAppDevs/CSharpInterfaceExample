@@ -16,5 +16,11 @@ namespace InterfaceExample.actors
             Console.WriteLine($"{Name} flees the combat!");
             return true;
         }
+
+        public override void Move(int x, int y)
+        {
+            // basic move functionality
+            Console.WriteLine($"{Name} moves at an average pace.");
+        }
     }
 }

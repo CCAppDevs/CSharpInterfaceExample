@@ -5,8 +5,9 @@ using System.Text;
 
 namespace InterfaceExample.architecture
 {
-    public interface IHurt
+    public interface IHurtBox
     {
-        bool TakeDamage(Actor source, int amount);
+        // does the damage
+        bool DealDamage(IHitBox target, int amount);
     }
 }

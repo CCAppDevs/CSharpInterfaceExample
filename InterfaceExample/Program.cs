@@ -32,6 +32,8 @@ namespace InterfaceExample
             //      basic melee attack
             //      light armor
 
+            Map myMap = new Map(30, 30);
+
             Wizard tim = new Wizard("Tim, The Enchanter", 3, 3, 15);
 
             List<AbstractEnemy> enemies = new List<AbstractEnemy>()
@@ -44,7 +46,7 @@ namespace InterfaceExample
             // all enemies at this step
             foreach(AbstractEnemy enemy in enemies)
             {
-                enemy.Move();
+                enemy.Move(0, 0);
             }
 
             // all enemies attempt to flee (if they can)

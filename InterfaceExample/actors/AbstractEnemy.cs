@@ -5,7 +5,7 @@ using System.Text;
 
 namespace InterfaceExample.actors
 {
-    public abstract class AbstractEnemy : Actor, IHealth
+    public abstract class AbstractEnemy : Actor, IHealth, IHitBox, IHurtBox, IMovement
     {
         protected AbstractEnemy(string name, int positionX, int positionY, int maxHealth) : 
             base(name, positionX, positionY)
@@ -15,28 +15,51 @@ namespace InterfaceExample.actors
         }
 
         public int MaxHealth { get; set; }
-        public int Health { get; set; }
+        private int _health;
+        public int Health { 
+            get
+            {
+                return _health;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    _health = 0;
+                }
+                else if (value > MaxHealth)
+                {
+                    _health = MaxHealth;
+                }
+                else
+                {
+                    _health = value;
+                }
+            } 
+        }
+
+        public bool ApplyDamage(IHurtBox source, int amount)
+        {
+            this.Health = this.Health - amount;
+            return true;
+        }
+
+        public bool DealDamage(IHitBox target, int amount)
+        {
+            // TODO: show a hit has happened
+            return target.ApplyDamage(this, amount);
+        }
 
         public bool IsAlive()
         {
             return Health > 0;
         }
 
-        // attack action
-        // movement
-        public virtual void Move()
-        {
-            // basic move functionality
-            Console.WriteLine($"{Name} moves at an average pace.");
-        }
+        public abstract void Move(int x, int y);
 
-        /*
-         * public abstract void Move(); 
-         * // this says any class inherited from this must provide a move function (once)
-         */
-        
+
+
         // loot
-        // take damage
 
     }
 }

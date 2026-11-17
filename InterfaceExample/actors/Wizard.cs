@@ -10,7 +10,7 @@ namespace InterfaceExample.actors
         {
         }
 
-        public override void Move()
+        public override void Move(int x, int y)
         {
             Console.WriteLine($"{Name} teleports forward at an alarming pace!");
         }
