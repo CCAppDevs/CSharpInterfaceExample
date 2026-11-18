@@ -6,6 +6,6 @@ namespace InterfaceExample.architecture
 {
     public interface IMovement
     {
-        abstract void Move(int x, int y); // added random comment
+        abstract void Move(int x, int y);
     }
 }
