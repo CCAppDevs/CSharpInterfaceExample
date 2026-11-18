@@ -32,7 +32,8 @@ namespace InterfaceExample
             //      basic melee attack
             //      light armor
 
-            Map myMap = new Map(30, 30);
+            Map myMap = new Map(10, 10);
+            myMap.PrintMap();
 
             Wizard tim = new Wizard("Tim, The Enchanter", 3, 3, 15);
 
