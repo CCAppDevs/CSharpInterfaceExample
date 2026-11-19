@@ -5,9 +5,9 @@ using System.Text;
 
 namespace InterfaceExample.actors
 {
-    public abstract class AbstractEnemy : Actor, IHealth, IHitBox, IHurtBox, IMovement
+    public abstract class Character : Actor, IHealth, IHitBox, IHurtBox, IMovement
     {
-        protected AbstractEnemy(string name, int positionX, int positionY, int maxHealth) : 
+        protected Character(string name, int positionX, int positionY, int maxHealth) : 
             base(name, positionX, positionY)
         {
             MaxHealth = maxHealth;
@@ -55,7 +55,11 @@ namespace InterfaceExample.actors
             return Health > 0;
         }
 
-        public abstract void Move(int x, int y);
+        public virtual void Move(int x, int y)
+        {
+            this.PositionX = x;
+            this.PositionY = y;
+        }
 
 
 

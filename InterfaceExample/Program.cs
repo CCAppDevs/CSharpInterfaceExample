@@ -31,13 +31,14 @@ namespace InterfaceExample
             //      steals from player
             //      basic melee attack
             //      light armor
+            Random random = new Random(123);
 
-            Map myMap = new Map(10, 10);
+            Map myMap = new Map(10, 10, random);
             myMap.PrintMap();
 
             Wizard tim = new Wizard("Tim, The Enchanter", 3, 3, 15);
 
-            List<AbstractEnemy> enemies = new List<AbstractEnemy>()
+            List<Character> enemies = new List<Character>()
             {
                 new Goblin("Skrit, the goblin", 2, 2, 10),
                 tim
@@ -45,13 +46,13 @@ namespace InterfaceExample
 
 
             // all enemies at this step
-            foreach(AbstractEnemy enemy in enemies)
+            foreach(Character enemy in enemies)
             {
-                enemy.Move(0, 0);
+                enemy.Move(1, 0);
             }
 
             // all enemies attempt to flee (if they can)
-            foreach (AbstractEnemy enemy in enemies)
+            foreach (Character enemy in enemies)
             {
                 if (enemy is IFleeable typedEnemy)
                 {

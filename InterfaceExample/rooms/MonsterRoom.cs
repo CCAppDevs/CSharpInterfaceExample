@@ -10,9 +10,9 @@ namespace InterfaceExample.rooms
         public string Description { get; set; }
         public bool IsComplete { get; set; }
         public char RoomSymbol { get; set; }
-        public AbstractEnemy Monster { get; set; }
+        public Character Monster { get; set; }
 
-        public MonsterRoom(AbstractEnemy monster)
+        public MonsterRoom(Character monster)
         {
             this.Monster = monster;
             this.Description = "This room contains monsters!";
